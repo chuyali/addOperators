@@ -6,12 +6,6 @@ import (
 	"strconv"
 )
 
-func AddOperators(str string, target int64) []string {
-	res := []string{}
-	backtrack(str, "", target, 0, 0, 0, &res)
-	fmt.Println(res)
-	return res
-}
 func main() {
 	str := "202"
 	var target int64 = 2
@@ -19,6 +13,13 @@ func main() {
 		return
 	}
 	AddOperators(str, target)
+}
+
+func AddOperators(str string, target int64) []string {
+	res := []string{}
+	backtrack(str, "", target, 0, 0, 0, &res)
+	fmt.Println(res)
+	return res
 }
 
 //递归实现
