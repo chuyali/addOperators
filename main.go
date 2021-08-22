@@ -20,6 +20,7 @@ func addOperators(str string, target int64) {
 	backtrack(str, "", target, 0, 0, 0, &res)
 	fmt.Println(res)
 }
+//递归实现
 func backtrack(str, path string, target, sum, start, pre int64, res *[]string) {
 	strLen := int64(len(str))
 	if start == strLen && sum == target {
