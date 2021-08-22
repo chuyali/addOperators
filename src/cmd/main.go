@@ -1,4 +1,4 @@
-package main
+package cmd
 
 import (
 	"fmt"
@@ -6,20 +6,21 @@ import (
 	"strconv"
 )
 
+func AddOperators(str string, target int64) []string {
+	res := []string{}
+	backtrack(str, "", target, 0, 0, 0, &res)
+	fmt.Println(res)
+	return res
+}
 func main() {
 	str := "202"
 	var target int64 = 2
 	if !isNum(str) {
 		return
 	}
-	addOperators(str, target)
+	AddOperators(str, target)
 }
 
-func addOperators(str string, target int64) {
-	res := []string{}
-	backtrack(str, "", target, 0, 0, 0, &res)
-	fmt.Println(res)
-}
 //递归实现
 func backtrack(str, path string, target, sum, start, pre int64, res *[]string) {
 	strLen := int64(len(str))
